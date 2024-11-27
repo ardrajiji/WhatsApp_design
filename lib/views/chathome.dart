@@ -127,8 +127,40 @@ class ChatHome extends StatelessWidget {
     //double screenWidth = MediaQuery.of(context).size.width;
     //double screenHeight = MediaQuery.of(context).size.height;
     return  Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
+          Container(
+              height: 45,
+              width: 370,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Color.fromARGB(255, 239, 237, 237),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start, // Center items horizontally
+                  crossAxisAlignment: CrossAxisAlignment.start, // Center items vertically
+                  children: [
+                    Icon(
+                      Icons.trip_origin_outlined,
+                      color: Colors.blueAccent, // Set icon color
+                      size: 25, // Set icon size
+                    ),
+                    SizedBox(width: 10), // Add space between icon and text
+                    Text(
+                      'Ask Meta AI or Search', // Your text
+                      style: TextStyle(
+                        fontSize: 16, // Set text size
+                        color: Colors.grey, // Set text color
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
 
           Expanded(
             child: ListView.builder(
