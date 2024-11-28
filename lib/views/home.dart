@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/views/chathome.dart';
+import 'package:whatsapp/views/call_home.dart';
+import 'package:whatsapp/views/chat_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     Center(child: ChatHome()),
     const Center(child: Text('Status ', style: TextStyle(fontSize: 24))),
     const Center(child: Text('Community ', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Calls ', style: TextStyle(fontSize: 24))),
+    Center(child: CallListHome()),
   ];
 
   void _onItemTapped(int index) {
@@ -214,6 +215,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: SizedBox(
         height: 90.0,
         child: BottomNavigationBar(
+          backgroundColor: Colors.white,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
              icon: Transform.rotate(
@@ -269,6 +271,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
 
 
 //popup menu of chat

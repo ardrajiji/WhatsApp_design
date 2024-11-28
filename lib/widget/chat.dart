@@ -7,6 +7,7 @@ class ChatPage extends StatelessWidget {
   final String calldetails;
   final String content;
   final String time;
+  final String messagecount;
   const ChatPage({
     super.key,
     required this.image,
@@ -14,6 +15,7 @@ class ChatPage extends StatelessWidget {
     required this.calldetails,
     required this.content,
     required this.time,
+    required this.messagecount,
   });
 
   @override
@@ -50,29 +52,58 @@ class ChatPage extends StatelessWidget {
                   const SizedBox(height: 4), 
                   Row(
                     children: [
-                       const Icon(
-                        Icons.done_all,
-                        color: Colors.green,
-                        size: 15,
-                      ),
+                     messagecount == "0" 
+                        ? const Icon(
+                            Icons.done_all,
+                            color: Colors.blue,
+                            size: 15,
+                          )
+                        : const SizedBox(),
+
                       const SizedBox(width: 4),
                       Text(
-                        content,
+                        content.length > 28 ? '${content.substring(0, 28)}...' : content,
                         style: const TextStyle(
                           fontSize: 15,
                           color: Colors.black,
                         ),
                       ),
+
                     ],
                   ),
                 ],
               ),
             ),
-            Text(time,
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.black,
-            ) ,),
+            Column(
+              children: [
+                Text(time,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.black,
+                ) ,),
+                const SizedBox(height: 6,),
+                messagecount == "0"
+                ? const SizedBox() // Invisible placeholder
+                : Container(
+                    width: 19,
+                    height: 19,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      color: Colors.green,
+                    ),
+                    child: Center(
+                      child: Text(
+                        messagecount,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                        ),
+                      ),
+                    ),
+                  )
+
+              ],
+            ),
           ],
         ),
       ),

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/widget/calls.dart';
 
-class Home extends StatelessWidget {
+class CallListHome extends StatelessWidget {
   final List<Map<String, dynamic>> details =
   [
-  {
+     {
     "name": "Liya S",
     "image": "assets/users/user1.jpg",
     "calldetails": "23 November,8.47pm",
     "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "2",
+    "time": "9.00 am",
+    "messagecount": "0",
     "call": "1"
   },
   {
@@ -18,8 +18,17 @@ class Home extends StatelessWidget {
     "image": "assets/users/user2.png",
     "calldetails": "26 November,9.10am",
     "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "3",
+    "time": "8.20 am",
+    "messagecount": "2",
+    "call": "0"
+  },
+  {
+    "name": "Job Updates",
+    "image": "assets/alumni/job1.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Hey, did you check the documents ?",
+    "time": "6.00 am",
+    "messagecount": "6",
     "call": "0"
   },
   {
@@ -27,44 +36,71 @@ class Home extends StatelessWidget {
     "image": "assets/users/user3.webp",
     "calldetails": "26 November,9.10am",
     "content": "Video call",
-    "time": "9.00 pm",
+    "time": "11.00 pm",
     "messagecount": "1",
     "call": "1"
+  },
+  {
+    "name": "MCA Alumni Group",
+    "image": "assets/alumni/alumniG1.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Photo",
+    "time": "8.40 pm",
+    "messagecount": "3",
+    "call": "0"
   },
   {
     "name": "Remya Sethu",
     "image": "assets/users/user4.png",
     "calldetails": "26 November,9.10am",
     "content": "Video call",
-    "time": "9.00 pm",
+    "time": "8.00 pm",
     "messagecount": "0",
     "call": "1"
+  },
+  {
+    "name": "Job Opening",
+    "image": "assets/alumni/job2.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Photo",
+    "time": "7.54 pm",
+    "messagecount": "0",
+    "call": "0"
   },
   {
     "name": "Manu J S",
     "image": "assets/users/user5.png",
     "calldetails": "26 November,9.10am",
     "content": "Can we reschedule our meeting?",
-    "time": "9.00 pm",
-    "messagecount": "4",
+    "time": "7.19 pm",
+    "messagecount": "0",
     "call": "0"
   },
   {
-    "name": "Nita Manu",
+    "name": "9956794331",
     "image": "assets/users/user6.jpg",
     "calldetails": "26 November,9.10am",
-    "content": "Video call",
-    "time": "9.00 pm",
-    "messagecount": "1",
+    "content": "Voice call",
+    "time": "10.00 am",
+    "messagecount": "0",
     "call": "1"
+  },
+  {
+    "name": "BCA Alumni Group",
+    "image": "assets/alumni/alumniG2.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Photo",
+    "time": "9.30 am",
+    "messagecount": "0",
+    "call": "0"
   },
   {
     "name": "Hari",
     "image": "assets/users/user7.png",
     "calldetails": "26 November,9.10am",
     "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "2",
+    "time": "9.40 am",
+    "messagecount": "0",
     "call": "0"
   },
   {
@@ -73,15 +109,15 @@ class Home extends StatelessWidget {
     "calldetails": "26 November,9.10am",
     "content": "Video call missed",
     "time": "9.00 pm",
-    "messagecount": "5",
+    "messagecount": "1",
     "call": "0"
   },
   {
-    "name": "Nila H",
+    "name": "9936047865",
     "image": "assets/users/user9.png",
     "calldetails": "26 November,9.10am",
     "content": "Congratulations",
-    "time": "9.00 pm",
+    "time": "3.00 pm",
     "messagecount": "0",
     "call": "0"
   },
@@ -90,49 +126,14 @@ class Home extends StatelessWidget {
     "image": "assets/users/user10.jpg",
     "calldetails": "26 November,9.10am",
     "content": "Happy Birthday",
-    "time": "9.00 pm",
-    "messagecount": "3",
+    "time": "4.00 pm",
+    "messagecount": "0",
     "call": "0"
-  },
-  {
-    "name": "Job Updates",
-    "image": "assets/alumni/job1.jpg",
-    "calldetails": "26 November,9.10am",
-    "content": "Hey, did you check the documents I sent?",
-    "time": "9.00 pm",
-    "messagecount": "6",
-    "call": "0"
-  },
-  {
-    "name": "Job Opening",
-    "image": "assets/alumni/job2.jpg",
-    "calldetails": "26 November,9.10am",
-    "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "1",
-    "call": "0"
-  },
-  {
-    "name": "BCA Alumni Group",
-    "image": "assets/alumni/alumniG2.jpg",
-    "calldetails": "26 November,9.10am",
-    "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "2",
-    "call": "0"
-  },
-  {
-    "name": "MCA Alumni Group",
-    "image": "assets/alumni/alumniG1.jpg",
-    "calldetails": "26 November,9.10am",
-    "content": "Photo",
-    "time": "9.00 pm",
-    "messagecount": "3",
-    "call": "0"
-  }
-];
+  }, 
+  
+  ];
 
- Home({super.key});
+ CallListHome({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/views/callhome.dart';
-import 'package:whatsapp/views/chathome.dart';
+import 'package:whatsapp/views/call_home.dart';
+import 'package:whatsapp/views/chat_home.dart';
 import 'package:whatsapp/views/home.dart';
 import 'package:whatsapp/views/updatehome.dart';
 import 'package:whatsapp/widget/calls.dart';
