@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/views/call_home.dart';
 import 'package:whatsapp/views/chat_home.dart';
+import 'package:whatsapp/views/updatehome.dart';
+import 'package:whatsapp/widget/community.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,8 +25,8 @@ class _HomePageState extends State<HomePage> {
   // Updated body content to include Community
   final List<Widget> _bodies = [
     Center(child: ChatHome()),
-    const Center(child: Text('Status ', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Community ', style: TextStyle(fontSize: 24))),
+    Center(child: UpdateHome()),
+   const Center(child: CommunityPage()),
     Center(child: CallListHome()),
   ];
 

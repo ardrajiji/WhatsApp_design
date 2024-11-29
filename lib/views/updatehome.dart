@@ -1,35 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/views/ViewAllChannel.dart';
-import 'package:whatsapp/views/channel.dart'; // Ensure this is the correct import
-import 'package:whatsapp/widget/channel.dart'; // Ensure this is the correct import for ChannelUpdate
-import 'package:whatsapp/widget/update.dart'; // Ensure this file contains the `UpdatePage` widget.
+import 'package:whatsapp/views/channel.dart';
+import 'package:whatsapp/widget/channel.dart'; 
+import 'package:whatsapp/widget/update.dart'; 
 
 class UpdateHome extends StatelessWidget {
   final List<Map<String, dynamic>> details = [
     {
-      "name": "Job Updates",
-      "image": "assets/alumni/job1.jpg",
-      "calldetails": "25 November, 8:47 PM",
-      "content": "Photo",
-      "time": "6:00 PM",
-      "numbers": "6",
-    },
+    "name": "Job Updates",
+    "image": "assets/alumni/job1.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Hey, did you check the documents ?",
+    "time": "6.00 am",
+    "messagecount": "6",
+    "callstatus": "0"
+  },
     {
-      "name": "Job Opening",
-      "image": "assets/alumni/job2.jpg",
-      "calldetails": "26 November, 9:10 AM",
-      "content": "Photo",
-      "time": "7:00 PM",
-      "numbers": "4",
-    },
-    {
-      "name": "IT Referral Jobs",
-      "image": "assets/alumni/alumniG2.jpg",
-      "calldetails": "26 November, 9:10 AM",
-      "content": "Photo",
-      "time": "7:00 PM",
-      "numbers": "9",
-    },
+    "name": "Job Opening",
+    "image": "assets/alumni/job2.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Update it.",
+    "time": "7.54 pm",
+    "messagecount": "0",
+    "callstatus": "0"
+  },
+   {
+    "name": "IT Referral Jobs",
+    "image": "assets/alumni/alumniG1.jpg",
+    "calldetails": "26 November,9.10am",
+    "content": "Photo",
+    "time": "8.40 pm",
+    "messagecount": "3",
+    "callstatus": "0"
+  },
   ];
 
   final List<Map<String, dynamic>> channeldetails = [
@@ -55,6 +58,19 @@ class UpdateHome extends StatelessWidget {
       "status": "Follow",
     },
   ];
+
+  // final List<Map<String, dynamic>> statusdetails = [
+  //   {
+  //     "statusImage": "Tenajaain",
+  //     "name": "Arya s",
+  //     "profileImage": "3.6M followers",
+  //   },
+  //   {
+  //     "statusImage": "Tenajaain",
+  //     "name": "Arya s",
+  //     "profileImage": "3.6M followers",
+  //   },
+  // ];
 
   UpdateHome({super.key});
 
@@ -112,12 +128,15 @@ class UpdateHome extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(right: 210),
             child: Text(
               "Find channels to follow",
-              style: TextStyle(fontSize: 15, color: Colors.grey),
+              style: TextStyle(fontSize: 15, 
+              color: Colors.grey,
+              fontWeight: FontWeight.bold),
             ),
           ),
+          const SizedBox(height: 15,),
           Expanded(
             child: ListView.builder(
               itemCount: channeldetails.length,

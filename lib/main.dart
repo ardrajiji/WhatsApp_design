@@ -5,6 +5,7 @@ import 'package:whatsapp/views/home.dart';
 import 'package:whatsapp/views/updatehome.dart';
 import 'package:whatsapp/widget/calls.dart';
 import 'package:whatsapp/widget/chat.dart';
+import 'package:whatsapp/widget/community.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  const HomePage(),
+      home:   const HomePage(),
     );
   }
 }

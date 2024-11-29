@@ -3,14 +3,14 @@ import 'package:whatsapp/widget/chat.dart';
 
 class ChatHome extends StatelessWidget {
   final List<Map<String, dynamic>> details = [
-     {
+   {
     "name": "Liya S",
     "image": "assets/users/user1.jpg",
     "calldetails": "23 November,8.47pm",
     "content": "Photo",
     "time": "9.00 am",
     "messagecount": "0",
-    "call": "1"
+    "callstatus": "1"
   },
   {
     "name": "Renu S",
@@ -19,7 +19,7 @@ class ChatHome extends StatelessWidget {
     "content": "Photo",
     "time": "8.20 am",
     "messagecount": "2",
-    "call": "0"
+    "callstatus": "0"
   },
   {
     "name": "Job Updates",
@@ -28,7 +28,7 @@ class ChatHome extends StatelessWidget {
     "content": "Hey, did you check the documents ?",
     "time": "6.00 am",
     "messagecount": "6",
-    "call": "0"
+    "callstatus": "0"
   },
   {
     "name": "Renu S",
@@ -37,7 +37,7 @@ class ChatHome extends StatelessWidget {
     "content": "Video call",
     "time": "11.00 pm",
     "messagecount": "1",
-    "call": "1"
+    "callstatus": "1"
   },
   {
     "name": "MCA Alumni Group",
@@ -46,7 +46,7 @@ class ChatHome extends StatelessWidget {
     "content": "Photo",
     "time": "8.40 pm",
     "messagecount": "3",
-    "call": "0"
+    "callstatus": "0"
   },
   {
     "name": "Remya Sethu",
@@ -55,7 +55,7 @@ class ChatHome extends StatelessWidget {
     "content": "Video call",
     "time": "8.00 pm",
     "messagecount": "0",
-    "call": "1"
+    "callstatus": "1"
   },
   {
     "name": "Job Opening",
@@ -64,7 +64,7 @@ class ChatHome extends StatelessWidget {
     "content": "Photo",
     "time": "7.54 pm",
     "messagecount": "0",
-    "call": "0"
+    "callstatus": "0"
   },
   {
     "name": "Manu J S",
@@ -73,7 +73,7 @@ class ChatHome extends StatelessWidget {
     "content": "Can we reschedule our meeting?",
     "time": "7.19 pm",
     "messagecount": "0",
-    "call": "0"
+    "callstatus": "2"
   },
   {
     "name": "9956794331",
@@ -82,7 +82,7 @@ class ChatHome extends StatelessWidget {
     "content": "Voice call",
     "time": "10.00 am",
     "messagecount": "0",
-    "call": "1"
+    "callstatus": "1"
   },
   {
     "name": "BCA Alumni Group",
@@ -91,7 +91,7 @@ class ChatHome extends StatelessWidget {
     "content": "Photo",
     "time": "9.30 am",
     "messagecount": "0",
-    "call": "0"
+    "callstatus": "0"
   },
   {
     "name": "Hari",
@@ -100,7 +100,7 @@ class ChatHome extends StatelessWidget {
     "content": "Photo",
     "time": "9.40 am",
     "messagecount": "0",
-    "call": "0"
+    "callstatus": "2"
   },
   {
     "name": "Anu S",
@@ -109,7 +109,7 @@ class ChatHome extends StatelessWidget {
     "content": "Video call missed",
     "time": "9.00 pm",
     "messagecount": "1",
-    "call": "0"
+    "callstatus": "2"
   },
   {
     "name": "9936047865",
@@ -118,7 +118,7 @@ class ChatHome extends StatelessWidget {
     "content": "Congratulations",
     "time": "3.00 pm",
     "messagecount": "0",
-    "call": "0"
+    "callstatus": "2"
   },
   {
     "name": "Riya K",
@@ -127,40 +127,44 @@ class ChatHome extends StatelessWidget {
     "content": "Happy Birthday",
     "time": "4.00 pm",
     "messagecount": "0",
-    "call": "0"
-  }, 
+    "callstatus": "0"
+  },  
   ];
 
   ChatHome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Get screen width and height
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
           // Search Bar Container
           Container(
-            height: 45,
-            width: 370,
+            height: screenHeight * 0.06, // Height is 6% of screen height
+            width: screenWidth * 0.9, // Width is 90% of screen width
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
               color: Color.fromARGB(255, 239, 237, 237),
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.all(screenHeight * 0.01),
               child: Row(
                 children: [
                   Icon(
                     Icons.trip_origin_outlined,
                     color: Colors.blueAccent,
-                    size: 25,
+                    size: screenHeight * 0.03, // Icon size based on screen height
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: screenWidth * 0.02),
                   Text(
                     'Ask Meta AI or Search',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: screenHeight * 0.02, // Text size based on screen height
                       color: Colors.grey,
                     ),
                   ),
@@ -168,17 +172,16 @@ class ChatHome extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: screenHeight * 0.02), // Spacing after the search bar
 
           // Chat List
           Expanded(
             child: ListView.builder(
               itemCount: details.length,
-              shrinkWrap: true,
               itemBuilder: (context, index) {
                 final item = details[index];
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
                   child: ChatPage(
                     name: item['name'],
                     image: item['image'],
@@ -201,8 +204,8 @@ class ChatHome extends StatelessWidget {
         children: [
           // First FAB
           SizedBox(
-            width: 45, // Set the width of the FAB
-            height:45, // Set the height of the FAB
+            width: screenWidth * 0.12, // Set FAB width as 12% of screen width
+            height: screenWidth * 0.12, // Set FAB height as 12% of screen width
             child: FloatingActionButton(
               onPressed: () {
                 // Handle action for the FAB
@@ -211,25 +214,28 @@ class ChatHome extends StatelessWidget {
               backgroundColor: Colors.white,
               foregroundColor: Colors.blue,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(19), // Custom FAB shape
+                borderRadius: BorderRadius.circular(screenWidth * 0.05), // Shape radius based on screen width
               ),
               heroTag: 'fab2', // Unique hero tag
-              child: const Icon(Icons.trip_origin, size: 27), // Adjust icon size
+              child: Icon(Icons.trip_origin, size: screenHeight * 0.03), // Icon size based on screen height
             ),
           ),
+          SizedBox(height: screenHeight * 0.02), // Spacing between FABs
 
-          const SizedBox(height: 16), // Spacing between FABs
           // Second FAB
-
-          FloatingActionButton(
-            onPressed: () {
-              // Handle action for the first FAB
-            },
-            tooltip: 'New chat',
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-            heroTag: 'fab1', // Unique hero tag
-            child: const Icon(Icons.reviews),
+          SizedBox(
+            width: screenWidth * 0.14,
+            height: screenWidth * 0.14,
+            child: FloatingActionButton(
+              onPressed: () {
+                // Handle action for the FAB
+              },
+              tooltip: 'New chat',
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              heroTag: 'fab1', // Unique hero tag
+              child: Icon(Icons.reviews, size: screenHeight * 0.035),
+            ),
           ),
         ],
       ),

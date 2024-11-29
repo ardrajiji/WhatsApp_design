@@ -17,7 +17,7 @@ class ChannelUpdate extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      child: Row(
+      child:Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
@@ -44,11 +44,7 @@ class ChannelUpdate extends StatelessWidget {
                 const SizedBox(height: 4), 
                 Row(
                   children: [
-                     const Icon(
-                      Icons.done_all,
-                      color: Colors.green,
-                      size: 15,
-                    ),
+                     
                     const SizedBox(width: 4),
                     Text(
                       followers,
@@ -65,16 +61,16 @@ class ChannelUpdate extends StatelessWidget {
           Column(
             children: [
               Container(
-                width: 20,
-                height: 25,
+                width: 70,
+                height: 30,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15),),
-                  color: Color.fromARGB(255, 174, 245, 177),
+                  color: Color.fromARGB(255, 176, 241, 179),
                 ),
                 child: const Center(
                   child: Text("Follow",style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
+                    color: Colors.black,
+                    fontSize: 13,
                   ),),
                 ),
               )

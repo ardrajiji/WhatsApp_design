@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
 class CallPage extends StatelessWidget {
-  final String image;
+ final String image;
   final String name;
   final String calldetails;
   final String content;
   final String time;
-
+  final String messagecount;
+  final String callstatus;
   const CallPage({
     super.key,
-    required this.image,
+     required this.image,
     required this.name,
     required this.calldetails,
     required this.content,
     required this.time,
+    required this.messagecount,
+    required this.callstatus,
   });
 
   @override
@@ -42,22 +45,28 @@ class CallPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
+                      name,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: (callstatus == '0') ? Colors.red : Colors.black,
+                      ),
                     ),
-                  ),
+
                   const SizedBox(height: 4), // Add spacing
                   Row(
                     children: [
-                      const Icon(
-                        Icons.call_made,
-                        color: Colors.green,
-                        size: 15,
-                      ),
+                      callstatus == '0' ? 
+                      const Icon(Icons.call_made, color: Colors.red,size: 18,) : 
+                      const Icon(Icons.call_received,color: Colors.green,size: 18,),
+
+
+                      // callstatus == '1' ? const Icon(Icons.call_received, color: Colors.green,) : 
+                      // const Icon(Icons.call_received,),
+                      // callstatus == '2' ? const Icon(Icons.call_made, color: Colors.green) : 
+                      // const Icon(Icons.call_received,color: Colors.green,),
+
                       const SizedBox(width: 4),
-                      Text(
+                      Text( 
                         calldetails,
                         style: const TextStyle(
                           fontSize: 15,
@@ -69,10 +78,16 @@ class CallPage extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(
-              Icons.video_call_outlined,
-              size: 30,
-            ),
+            callstatus == '1' ? 
+              const Icon(
+              Icons.videocam_outlined,
+              size: 28,
+              color: Color.fromARGB(255, 26, 25, 25),) : 
+
+              const Icon(Icons.phone_outlined,
+              color: Color.fromARGB(255, 14, 14, 14),
+              size: 25,),
+
           ],
         ),
       ),
