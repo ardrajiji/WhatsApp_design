@@ -5,7 +5,10 @@ class CommunityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Scaffold(
+      backgroundColor: Colors.white,
+        body: Center(
+        child:Container(
       //first row 
       child:  Column(
         children: [
@@ -52,42 +55,48 @@ class CommunityPage extends StatelessWidget {
 
 
           //second row 
-          Card(
-              elevation: 1, // Adds shadow for a material look
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2), // Rounds the card edges
-              ),
-              color: Colors.white, // Set the card background color
-              child: Padding(
-                padding: const EdgeInsets.all(10.0), // Adds space inside the card
-                child: Row(
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.asset(
-                          "assets/alumni/channel3.webp",
-                          fit: BoxFit.cover, // Ensures the image fits nicely
+           GestureDetector(
+              onTap: () {
+                // Define the action to be performed when the card is tapped
+               // print("Card tapped!");
+              },
+              child: Card(
+                elevation: 1, // Adds shadow for a material look
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2), // Rounds the card edges
+                ),
+                color: Colors.white, // Set the card background color
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0), // Adds space inside the card
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            "assets/alumni/channel3.webp",
+                            fit: BoxFit.cover, // Ensures the image fits nicely
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 10), // Adds space between the image and text
-                    const Expanded(
-                      child: Text(
-                        "Jobs and Career Pathway ",
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                      const SizedBox(width: 10), // Adds space between the image and text
+                      const Expanded(
+                        child: Text(
+                          "Jobs and Career Pathway ",
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -95,7 +104,7 @@ class CommunityPage extends StatelessWidget {
 
           // Third row 
                 Card(
-                elevation: 4, // Adds shadow for the card
+                elevation: 2, // Adds shadow for the card
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10), // Rounds the edges of the card
                 ),
@@ -197,6 +206,9 @@ class CommunityPage extends StatelessWidget {
          
         ],
       ),
+    )
+
+    ),
     );
   }
 }

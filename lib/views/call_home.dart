@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp/widget/calls.dart';
 
 class CallListHome extends StatelessWidget {
-  final List<Map<String, dynamic>> details =
-  [
+  final List<Map<String, dynamic>> details = [
     {
     "name": "Liya S",
     "image": "assets/users/user1.jpg",
@@ -98,28 +97,91 @@ class CallListHome extends StatelessWidget {
   
   ];
 
- CallListHome({super.key});
+  CallListHome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //double screenWidth = MediaQuery.of(context).size.width;
-    //double screenHeight = MediaQuery.of(context).size.height;
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Scrollable Text
+            Padding(
+              padding: const EdgeInsets.only(left: 18),
+              child: Column(
+                children: [
+                  const Row(
+                    children: [
+                      Text(
+                        "Favourites",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20,),
+                  Row(
+                    children: [
+                     GestureDetector(
+                        onTap: () {
+                          
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.green,
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.favorite,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      ),
 
-          Expanded(
-            child: ListView.builder(
-              itemCount: details.length,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemBuilder: (context, index) {
-                final item = details[index];
+                      const SizedBox(width: 15,),
+                      const Text(
+                        " Add Favourite",
+                          style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                            ]
+                  ),
+                  const SizedBox(height: 18,),
+                  const Row(children: [
+                    Text(
+                        "Recent",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                  ],),
+                  const SizedBox(height: 10,),
+                ],
+              ),
+            ),
+
+            // Scrollable List Items
+            Column(
+              children: details.map((item) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: CallPage(
-                   name: item['name'],
+                    name: item['name'],
                     image: item['image'],
                     calldetails: item['calldetails'],
                     content: item['content'],
@@ -128,15 +190,32 @@ class CallListHome extends StatelessWidget {
                     callstatus: item['callstatus'],
                   ),
                 );
-              },
+              }).toList(),
             ),
-          )
-
-          
-        ]
-        
+          ],
+        ),
       ),
-      
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Navigate to the next page when pressed
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const NextPage()),
+          // );
+        },
+        tooltip: 'New call', // Tooltip when FAB is long pressed
+        backgroundColor: Colors.green, // Background color
+        foregroundColor: Colors.white, // Icon color
+        elevation: 10.0, // Shadow below the FAB
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15), // Custom FAB shape
+        ),
+        //heroTag: 'fab-next-page', // Unique hero tag for animations
+        child: const Icon(Icons.add_call), // Icon inside the FAB
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat, // Location of the FAB
+
     );
   }
 }
