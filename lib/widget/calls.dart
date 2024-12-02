@@ -31,11 +31,11 @@ class CallPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start, // Align children properly
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               child: Image.asset(
                 image,
                 width: screenWidth * 0.1 + 10,
-                height: screenHeight * 0.04,
+                height: screenHeight * 0.06,
                 fit: BoxFit.cover,
               ),
             ),

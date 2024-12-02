@@ -7,7 +7,7 @@ class UpdatePage extends StatelessWidget {
   final String calldetails;
   final String content;
   final String time;
-  final String numbers;
+  final String messagecount;
   const UpdatePage({
     super.key,
     required this.image,
@@ -15,7 +15,7 @@ class UpdatePage extends StatelessWidget {
     required this.calldetails,
     required this.content,
     required this.time,
-    required this.numbers
+    required this.messagecount
   });
 
   @override
@@ -27,11 +27,11 @@ class UpdatePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
             child: Image.asset(
               image,
               width: screenWidth * 0.1 + 10,
-              height: screenHeight * 0.04,
+              height: screenHeight * 0.06,
               fit: BoxFit.cover,
             ),
           ),
@@ -83,7 +83,7 @@ class UpdatePage extends StatelessWidget {
                   color: Colors.green,
                 ),
                 child: Center(
-                  child: Text(numbers,style: const TextStyle(
+                  child: Text(messagecount,style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
                   ),),

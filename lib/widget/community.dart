@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/views/communityhome.dart';
 
 class CommunityPage extends StatelessWidget {
   const CommunityPage({super.key});
@@ -56,10 +57,13 @@ class CommunityPage extends StatelessWidget {
 
           //second row 
            GestureDetector(
-              onTap: () {
-                // Define the action to be performed when the card is tapped
-               // print("Card tapped!");
-              },
+             onTap: () {
+            // Navigate to the next page
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>const CommunityView ()),
+             );
+             },
               child: Card(
                 elevation: 1, // Adds shadow for a material look
                 shape: RoundedRectangleBorder(
@@ -111,93 +115,114 @@ class CommunityPage extends StatelessWidget {
                color: Colors.white, // Card background color
                child: Padding(
                 padding: const EdgeInsets.all(15.0), // Internal padding for the card
-                child: Column(
+                child:
+                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start, // Align items to the start
                   children: [
-                  Row(
-                  children: [
-                    Container(
-                      width: 35, // Adjusted size for better visibility
-                      height: 35,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color.fromARGB(255, 142, 236, 145),
-                      ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.campaign,
-                          size: 25,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10), // Adds spacing between icon and text
-                    const Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Announcements",
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                          SizedBox(height: 1,),
-                          Text(
-                            "~Prajula: OffCampus hiring for 2024-2...",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                  GestureDetector(
+                    onTap: () {
+                      // Perform your desired action, e.g., navigate to another page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CommunityView()), // Replace with your target page
+                      );
+                    },
+                    child: Row(
                       children: [
-                        Text(
-                          "Yesterday",
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: Colors.black,
+                        
+                        Container(
+                          width: 35, // Adjusted size for better visibility
+                          height: 35,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Color.fromARGB(255, 142, 236, 145),
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.campaign,
+                              size: 25,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                        SizedBox(height: 3,),
-                        Icon(
-                          Icons.notifications,
-                          size: 19,
-                          color: Colors.grey,
+                        const SizedBox(width: 10), // Adds spacing between icon and text
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Announcements",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              SizedBox(height: 1),
+                              Text(
+                                "~Prajula: OffCampus hiring for 202...",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Yesterday",
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(height: 3),
+                            Icon(
+                              Icons.notifications,
+                              size: 19,
+                              color: Colors.grey,
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-                const SizedBox(height: 28), // Spacing between rows
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 10,
-                      color: Colors.grey,
-                    ),
-                    SizedBox(width: 5),
-                    Padding(
-                      padding: EdgeInsets.only(right: 300),
-                      child: Row(
-                        children: [
-                          Text(
-                            "View all",
-                            style: TextStyle(fontSize: 10, color: Colors.grey),
-                            ),
-                        ],
-                      ),
-                    ),
-                    ],
                   ),
+
+
+
+                const SizedBox(height: 28), // Spacing between rows
+                 Padding(
+                  padding: const EdgeInsets.only(right: 260),
+                  child:
+                  GestureDetector(
+                    onTap: () {
+                      // Perform your action, e.g., navigate to another page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CommunityView()), // Replace with your target page
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 18,
+                          color: Colors.grey,
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "View all",
+                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  )
+
+                ),
                 ],
               ),
             ),

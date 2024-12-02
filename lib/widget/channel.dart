@@ -24,8 +24,8 @@ class ChannelUpdate extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             child: Image.asset(
               image1,
-              width: screenWidth * 0.1 + 10,
-              height: screenHeight * 0.04,
+              width: screenWidth * 0.1 + 20,
+              height: screenHeight * 0.06,
               fit: BoxFit.cover,
             ),
           ),
