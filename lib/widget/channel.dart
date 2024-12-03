@@ -21,10 +21,10 @@ class ChannelUpdate extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(25)),
             child: Image.asset(
               image1,
-              width: screenWidth * 0.1 + 20,
+              width: screenWidth * 0.1 + 13,
               height: screenHeight * 0.06,
               fit: BoxFit.cover,
             ),
@@ -34,13 +34,21 @@ class ChannelUpdate extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  name1,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      name1,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const Icon(Icons.verified,
+                    color:Colors.blue,
+                    size: 16,),
+                  ],
                 ),
+                
                 const SizedBox(height: 4), 
                 Row(
                   children: [

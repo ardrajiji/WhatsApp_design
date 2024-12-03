@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/views/ViewAllChannel.dart';
 import 'package:whatsapp/views/channel.dart';
+import 'package:whatsapp/views/status_home.dart';
 import 'package:whatsapp/widget/channel.dart'; 
 import 'package:whatsapp/widget/update.dart'; 
 
@@ -83,6 +84,7 @@ class UpdateHome extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              //StatusHome(),
               const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
@@ -154,7 +156,9 @@ class UpdateHome extends StatelessWidget {
               },
             ),
           ),
+          
         ],
+        
       ),
     );
   }
