@@ -72,7 +72,7 @@ class StatusHome extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = statusdetails[index];
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: .08),
             child: StatusUpdatePAge(
               name: item['name'],
               statusImage: item['statusImage'],
@@ -83,10 +83,10 @@ class StatusHome extends StatelessWidget {
         },
       ),
     ),
-    // Other children of the Column can go here
-  ],
-  ),
-
-    );
+    
+    ],
+   ),
+   
+  );
   }
 }

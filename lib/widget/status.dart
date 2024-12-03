@@ -19,29 +19,32 @@ class StatusUpdatePAge extends StatelessWidget {
     return  Container(
             child: Stack(
               children: [
-                // Background Image
+               
                  Container(
-                  //width: 100,
-                  //height: 200,
+                  width: 100,
+                  height: 200,
                   decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Image.asset(statusImage,
-                  width: 100,
-                  height: 200,),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(27)),
+                    child: Image.asset(statusImage,
+                    width: 100,
+                    height: 200,),
+                  ),
                 ),
-                // Overlay image at the top-right corner
+                
                 Positioned(
-                  top: 20,
-                  left: 10, // Aligning it on the right side
+                  top: 5,
+                  left: 10,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey[300], // Optional background color for contrast
+                      color: Colors.black, 
                       border: Border.all(
-                        color: Colors.green, // Border color
-                        width: 3, // Border width
+                        color: status == '0' ?  Colors.green : Colors.white, 
+                        width: 3,
                       ),
-                      borderRadius: BorderRadius.circular(25), // Match the image's rounded corners
+                      borderRadius: BorderRadius.circular(25), 
                     ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(25)),
@@ -54,10 +57,10 @@ class StatusUpdatePAge extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Text positioned at the bottom-right corner
+               
                  Positioned(
-                  right: 340, // Aligning it on the right side
-                  bottom: 25, // Adjusting the vertical alignment
+                  right: 50, 
+                  bottom: 10,
                   child: Text(
                     name,
                     style: const TextStyle(

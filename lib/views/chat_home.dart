@@ -3,7 +3,7 @@ import 'package:whatsapp/widget/chat.dart';
 
 class ChatHome extends StatelessWidget {
   final List<Map<String, dynamic>> details = [
-   {
+    {
     "name": "Liya S",
     "image": "assets/users/user1.jpg",
     "calldetails": "23 November,8.47pm",
@@ -58,6 +58,15 @@ class ChatHome extends StatelessWidget {
     "callstatus": "1"
   },
   {
+    "name": "Anu S",
+    "image": "assets/users/user8.png",
+    "calldetails": "26 November,9.10am",
+    "content": "Video call missed",
+    "time": "9.00 pm",
+    "messagecount": "1",
+    "callstatus": "2"
+  },
+  {
     "name": "Job Opening",
     "image": "assets/alumni/job2.jpg",
     "calldetails": "26 November,9.10am",
@@ -102,15 +111,7 @@ class ChatHome extends StatelessWidget {
     "messagecount": "0",
     "callstatus": "2"
   },
-  {
-    "name": "Anu S",
-    "image": "assets/users/user8.png",
-    "calldetails": "26 November,9.10am",
-    "content": "Video call missed",
-    "time": "9.00 pm",
-    "messagecount": "1",
-    "callstatus": "2"
-  },
+  
   {
     "name": "9936047865",
     "image": "assets/users/user9.png",
@@ -128,7 +129,7 @@ class ChatHome extends StatelessWidget {
     "time": "4.00 pm",
     "messagecount": "0",
     "callstatus": "0"
-  },  
+  }, 
   ];
 
   ChatHome({super.key});
@@ -141,42 +142,44 @@ class ChatHome extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          // Search Bar Container
-          Container(
-            height: screenHeight * 0.06, // Height is 6% of screen height
-            width: screenWidth * 0.9, // Width is 90% of screen width
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: Color.fromARGB(255, 239, 237, 237),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(screenHeight * 0.01),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.trip_origin_outlined,
-                    color: Colors.blueAccent,
-                    size: screenHeight * 0.03, // Icon size based on screen height
-                  ),
-                  SizedBox(width: screenWidth * 0.02),
-                  Text(
-                    'Ask Meta AI or Search',
-                    style: TextStyle(
-                      fontSize: screenHeight * 0.02, // Text size based on screen height
-                      color: Colors.grey,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Search Bar Container
+            Container(
+              height: screenHeight * 0.06, // Height is 6% of screen height
+              width: screenWidth * 0.9, // Width is 90% of screen width
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Color.fromARGB(255, 239, 237, 237),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(screenHeight * 0.01),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.trip_origin_outlined,
+                      color: Colors.blueAccent,
+                      size: screenHeight * 0.03, // Icon size based on screen height
                     ),
-                  ),
-                ],
+                    SizedBox(width: screenWidth * 0.02),
+                    Text(
+                      'Ask Meta AI or Search',
+                      style: TextStyle(
+                        fontSize: screenHeight * 0.02, // Text size based on screen height
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(height: screenHeight * 0.02), // Spacing after the search bar
+            SizedBox(height: screenHeight * 0.02), // Spacing after the search bar
 
-          // Chat List
-          Expanded(
-            child: ListView.builder(
+            // Chat List
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: details.length,
               itemBuilder: (context, index) {
                 final item = details[index];
@@ -193,8 +196,8 @@ class ChatHome extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
 
       // Floating Action Buttons

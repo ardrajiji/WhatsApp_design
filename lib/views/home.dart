@@ -220,12 +220,34 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-             icon: Transform.rotate(
-              angle: 0/ 2,  // Rotate by 90 degrees (π/2 radians)
-              child: _buildIcon(Icons.chat_outlined, 0),
-             ),
-             label: 'Chats',
-            ),
+            icon: Stack(
+                    alignment: Alignment.center,  // Aligns the container to the center of the icon
+                    children: [
+                      Transform.rotate(
+                        angle: 0 / 2,  // Rotate by 90 degrees (π/2 radians)
+                        child: _buildIcon(Icons.chat_outlined, 0),
+                      ),
+                      Positioned(
+                        top: 0,  // Position the container at the top of the icon
+                        left: 40,
+                        child: Container(
+                          width: 17,
+                          height: 17,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,  // Change to your desired color
+                            shape: BoxShape.circle,  // Circle shape for the container
+                          ),
+                          child: const Center(
+                            child: Text("5",
+                            style: TextStyle(fontSize: 12, color: Colors.white),),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+          label: 'Chats',
+          ),
+
             BottomNavigationBarItem(
               icon: _buildIcon(Icons.autorenew_outlined, 1),
               label: 'Updates', 
