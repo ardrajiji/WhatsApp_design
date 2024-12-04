@@ -3,15 +3,15 @@ import 'package:whatsapp/widget/calls.dart';
 
 class CallListHome extends StatelessWidget {
   final List<Map<String, dynamic>> details = [
-    {
-    "name": "Liya S",
-    "image": "assets/users/user1.jpg",
-    "calldetails": "23 November,8.47pm",
-    "content": "Photo",
-    "time": "9.00 am",
-    "messagecount": "0",
-    "callstatus": "1"
-  },
+  //   {
+  //   "name": "Liya S (you)",
+  //   "image": "assets/users/user1.jpg",
+  //   "calldetails": "23 November,8.47pm",
+  //   "content": "Photo",
+  //   "time": "9.00 am",
+  //   "messagecount": "0",
+  //   "callstatus": "1"
+  // },
   {
     "name": "Renu S",
     "image": "assets/users/user2.png",

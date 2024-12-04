@@ -27,19 +27,20 @@ class CommunityPage extends StatelessWidget {
                     width: 50,
                     height: 50,
                     decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
+                       borderRadius: BorderRadius.all(
+                        Radius.circular(15), ),
                       color: Colors.grey, // Optional: Add a subtle background
                     ),
-                    child: const Center(
+                     child: const Center(
                       child: Icon(
                         Icons.groups_outlined,
                         size: 30,
                         color: Colors.white,
                       ),
+                      
                     ),
                   ),
+
                   const SizedBox(width: 10), // Adds space between the icon and text
                   const Text(
                     "New community",

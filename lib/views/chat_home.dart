@@ -4,7 +4,7 @@ import 'package:whatsapp/widget/chat.dart';
 class ChatHome extends StatelessWidget {
   final List<Map<String, dynamic>> details = [
     {
-    "name": "Liya S",
+    "name": "Liya S (You)",
     "image": "assets/users/user1.jpg",
     "calldetails": "23 November,8.47pm",
     "content": "Photo",
@@ -139,7 +139,7 @@ class ChatHome extends StatelessWidget {
     // Get screen width and height
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-
+ 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp/views/call_home.dart';
 import 'package:whatsapp/views/chat_home.dart';
 import 'package:whatsapp/views/home.dart';
-import 'package:whatsapp/views/status_home.dart';
 import 'package:whatsapp/views/updatehome.dart';
 import 'package:whatsapp/widget/calls.dart';
 import 'package:whatsapp/widget/chat.dart';

@@ -61,17 +61,18 @@ class UpdateHome extends StatelessWidget {
 
   final List<Map<String, dynamic>> statusdetails = [
     {
-      "name": "Liya S",
+      "name": "You",
       "profileImage": "assets/users/user1.jpg",
       "statusImage": "assets/status/status1.jpg",
       "status": "0",
     },
     {
-      "name": "Hari",
-      "profileImage": "assets/users/user7.png",
+      "name": "Renu S",
+      "profileImage": "assets/users/user2.png",
       "statusImage": "assets/status/status2.jpg",
       "status": "0",
     },
+
     {
       "name": "Aleena George",
       "profileImage": "assets/users/user3.webp",
@@ -82,6 +83,12 @@ class UpdateHome extends StatelessWidget {
       "name": "Maya k",
       "profileImage": "assets/users/user6.jpg",
       "statusImage": "assets/status/status6.jpg",
+      "status": "0",
+    },
+    {
+      "name": "Hari",
+      "profileImage": "assets/users/user7.png",
+      "statusImage": "assets/status/status2.jpg",
       "status": "0",
     },
     {
@@ -96,12 +103,7 @@ class UpdateHome extends StatelessWidget {
       "statusImage": "assets/status/status5.jpg",
       "status": "1",
     },
-    {
-      "name": "Renu S",
-      "profileImage": "assets/users/user2.png",
-      "statusImage": "assets/status/status2.jpg",
-      "status": "1",
-    },
+    
     {
       "name": "Anu S",
       "profileImage": "assets/users/user8.png",
@@ -132,7 +134,7 @@ class UpdateHome extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 120,
+              height: 180,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: statusdetails.length,
@@ -150,7 +152,7 @@ class UpdateHome extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
